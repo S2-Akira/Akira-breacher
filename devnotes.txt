@@ -1,0 +1,100 @@
+Akira Breacher - Development Notes (devnotes.txt)
+Overview:
+Akira Breacher is a versatile brute-force tool designed to perform brute-force attacks on various protocols such as SSH, FTP, and HTTP Basic Auth. The tool leverages a simple GUI, making it accessible for both experienced users and beginners. Its modular design allows for easy extension to support additional protocols or features.
+
+Features:
+GUI with Tkinter: Provides a user-friendly interface for easy configuration and control of brute-force attacks.
+
+SSH Brute Force: Allows targeting SSH servers with customizable credentials (username, charset, max password length).
+
+FTP Brute Force: Similar to SSH but targets FTP servers, with login capabilities using custom credentials.
+
+HTTP Basic Auth Brute Force: Targets HTTP-based authentication mechanisms, allowing brute-forcing on web apps with basic authentication.
+
+Dark Mode: Toggle between dark and light themes for better user experience, especially in low-light environments.
+
+AI Guess Mode: Experimental mode that could use AI to intelligently guess passwords based on common patterns.
+
+Start/Stop Functionality: Start and stop brute-force attacks in real-time, with live logging of attempted passwords and success/failure statuses.
+
+Libraries Used:
+paramiko (v2.11.0): Handles SSH connections and performs brute force on SSH servers.
+
+requests (v2.28.2): Used for making HTTP requests for Basic Authentication checks.
+
+ftplib (Standard Library): Manages FTP connections for brute force attacks on FTP servers.
+
+tkinter: Used for the graphical user interface (GUI), making the tool more accessible.
+
+threading: Allows the tool to run attacks concurrently, improving performance and responsiveness.
+
+itertools: Utilized for generating password combinations based on the specified charset and length.
+
+TODO / Future Improvements:
+GPU Utilization for Brute Force:
+
+Research and implement GPU support for accelerating password generation and testing, particularly using libraries like pyCUDA or TensorFlow.
+
+This can significantly speed up brute-force attacks on high-end machines.
+
+AI-powered Guess Mode:
+
+Further development of the AI-powered mode for more intelligent password guessing (e.g., predicting weak or commonly used passwords).
+
+Could integrate libraries like OpenAI's GPT models or custom machine learning models.
+
+Proxy Support:
+
+Add proxy functionality for masking the real IP address during attacks to enhance anonymity and bypass rate-limiting mechanisms on target servers.
+
+Expanded Protocol Support:
+
+Add support for additional protocols such as Telnet, SMB, or custom web application login forms.
+
+Captcha Bypass:
+
+Research potential ways to bypass CAPTCHA protection (e.g., reCAPTCHA) that some websites use to block brute force attacks.
+
+Rate Limiting:
+
+Introduce rate-limiting mechanisms for the tool to avoid detection or throttling by targets.
+
+Implement delays or sleep intervals between attempts to prevent getting blocked.
+
+Logging and Reporting:
+
+Enhance logging features to create detailed attack logs that store the status of each attempt, timestamps, and output to external files.
+
+Implement reporting features for attack results to make it easier for users to analyze the success/failure rate.
+
+User Authentication:
+
+Add authentication (via API tokens or OAuth) to secure the use of the tool in certain contexts (e.g., for web-based attacks).
+
+Error Handling:
+
+Improve error handling for failed connections, retries, and exceptions to make the tool more robust.
+
+Provide clearer feedback for the user when attacks fail (e.g., invalid credentials, unreachable host).
+
+Known Issues:
+Timeouts: Some targets may timeout if the server has strict rate-limiting, causing failed attempts.
+
+Captcha: Basic HTTP auth-based attacks might be blocked by websites using CAPTCHA or other bot-prevention techniques.
+
+Limited AI Guess Mode: Currently, AI Guess Mode is a placeholder and doesn't implement any real intelligence. Future versions will improve this functionality.
+
+Development Notes:
+Design Philosophy: The tool was designed with simplicity and versatility in mind. It is modular, allowing for easy expansion to include additional protocols, attack types, or functionalities in the future.
+
+Tkinter Limitations: While Tkinter is good for creating basic GUIs, there might be performance issues with more complex features (like handling large logs or real-time attack results). Consider exploring other GUI libraries (e.g., PyQt) for more complex or resource-intensive features.
+
+Multi-threading: Threading was used for handling brute-force attacks concurrently. Ensure that the tool properly manages resources when scaling to large numbers of threads to avoid overloading the system.
+
+Acknowledgments:
+S2-Akira: Creator and lead developer.
+
+paramiko and requests communities: Libraries used to implement core functionality.
+
+Tkinter: Simple GUI framework for providing a user interface.
+
