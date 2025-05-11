@@ -1,0 +1,27 @@
+
+
+paramiko==2.11.0
+requests==2.28.2
+Explanation:
+paramiko:
+
+A Python library that provides an interface for SSH2 protocol, commonly used to perform SSH brute force attacks, as seen in your code. Version 2.11.0 is chosen to ensure it remains compatible and doesn't break your functionality due to version changes.
+
+requests:
+
+The requests library is used for sending HTTP requests (e.g., HTTP Basic Authentication in your code). Version 2.28.2 is selected to avoid breaking changes or potential issues with newer versions that could impact the requests.
+
+To generate the requirements.txt for your project:
+
+Create a new file called requirements.txt in your project directory.
+
+Paste the content above into that file.
+
+To install these dependencies, run the following command in your project directory:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Optional Libraries:
+If you're using any other external libraries (e.g., tkinter is built into Python and does not require installation), just let me know, and I can update the requirements.txt further.
